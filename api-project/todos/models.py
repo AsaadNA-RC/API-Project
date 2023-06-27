@@ -1,6 +1,7 @@
 from django.db import models
 from account.models import UserData
 
+
 class TodosData(models.Model):
     user = models.ForeignKey(UserData, on_delete=models.CASCADE)
     todo_text = models.CharField(max_length=200)

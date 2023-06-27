@@ -7,6 +7,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
     Custom Claim for JWT Payload
 '''
 
+
 class CustomTokenPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
@@ -15,6 +16,7 @@ class CustomTokenPairSerializer(TokenObtainPairSerializer):
         token['email'] = user.email
         token['is_superuser'] = user.is_superuser
         return token
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

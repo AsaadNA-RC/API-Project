@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   django_gunicorn:
+    image: asaadna/api-project-app
     volumes:
       - static:/static
     env_file:
@@ -11,6 +12,7 @@ services:
     ports:
       - "8001:8001"
   nginx:
+    image: asaadna/api-project-nginx
     build: ./nginx
     volumes:
       - static:/static

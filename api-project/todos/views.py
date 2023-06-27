@@ -18,7 +18,7 @@ class Todo(APIView, LimitOffsetPagination):
         results = self.paginate_queryset(data, req, view=self)
         serializer = TodoSerializer(results, many=True)
         return self.get_paginated_response(serializer.data)
-    
+
     # This will create a new todo for the authenticated user
     def post(self, req):
         serialized = TodoSerializer(data=req.data)

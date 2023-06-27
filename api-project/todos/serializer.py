@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from .models import TodosData
 
+
 class TodoSerializer(ModelSerializer):
     class Meta:
         model = TodosData
